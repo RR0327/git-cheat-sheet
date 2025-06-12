@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Git Cheat Sheet.png" width="500" alt="Git Cheat Sheet">
+</p>
+
 # <h1 align="center">Git Cheat Sheet</h1> 
 
 This cheat sheet provides an overview of essential Git commands categorized into **Beginner**, **Intermediate/Advanced**, and **Expert** levels. 
