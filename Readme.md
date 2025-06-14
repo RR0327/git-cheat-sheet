@@ -224,15 +224,28 @@ git push origin main
 
 ### For Others (Collaborators)
 
+If you haven't made local changes yet, you don’t need to git add or git commit before git pull.
+
 If you’ve already cloned the repository and want to sync the latest changes, follow these commands:
 
 ```
-git add .
-git commit -m "initial work"
 git pull origin main
+git add .
+git commit -m "your message"
+git push origin main
 ```
 
 - This stages your changes, commits, and pulls the latest updates from the remote repository to keep your local copy current.
+
+It's also a good idea to occasionally fetch and review the log:
+```
+git fetch
+git log --oneline --graph --all
+```
+
+to understand the commit history.
+
+
 
 ---
 
