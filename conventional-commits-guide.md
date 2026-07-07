@@ -26,12 +26,12 @@ docs(readme): update installation instructions
 
 ## Quick Rules
 
-- Use lowercase for the commit type.
-- Write the summary in the imperative mood (e.g., `add`, `fix`, `update`).
-- Keep the summary concise (around 50–72 characters when possible).
+- Use **lowercase** for the _commit type_.
+- Write the **summary in the imperative mood** (e.g., `add`, `fix`, `update`).
+- Keep the **summary concise** (_around 50–72 characters_ when possible).
 - Do not end the summary with a period.
-- Use the body to explain **why** the change was made, not **what** changed.
-- Use the footer for issue references or breaking changes.
+- Use the **body** to **explain `why` the change was made, not `what` changed.**
+- Use the _footer_ for **issue references or breaking changes.**
 
 ---
 
