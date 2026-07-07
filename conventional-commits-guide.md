@@ -35,7 +35,14 @@ docs(readme): update installation instructions
 
 ---
 
-## Complete List of Commit Types
+> # Complete List of Commit Types
+
+<p align="left">
+  <img src="list1.png" width="500" alt="list">
+</p>
+<p align="left">
+  <img src="list2.png" width="500" alt="list">
+</p>
 
 | Type       | Description                                                                                 |
 | ---------- | ------------------------------------------------------------------------------------------- |
