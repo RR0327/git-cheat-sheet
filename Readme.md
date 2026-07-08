@@ -294,7 +294,7 @@ git push
 
 **Git displays**:
 
-```text
+```bash
 fatal: The current branch main has no upstream branch.
 ```
 
@@ -315,7 +315,7 @@ origin https://github.com/USERNAME/Git_and_Github.git (fetch)
 origin https://github.com/USERNAME/Git_and_Github.git (push)
 ```
 
-then your remote already exists.
+**then your remote already exists.**
 
 If nothing appears, then you haven't added a remote yet.
 
@@ -329,7 +329,7 @@ git push -u origin main
 
 or
 
-```
+```bash
 git push --set-upstream origin main
 ```
 
@@ -362,7 +362,7 @@ git push
 
 Run these commands and send me the output:
 
-```
+```bash
 git remote -v
 git branch -vv
 git remote show origin
