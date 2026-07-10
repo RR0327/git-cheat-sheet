@@ -112,6 +112,8 @@ style(header): fix indentation
 
 ### `refactor` — Code Refactoring
 
+Refactor means পুনর্গঠন.
+
 Improves code structure without changing behavior.
 
 ```bash
@@ -184,7 +186,7 @@ chore: configure ESLint rules
 
 ### `revert` — Revert
 
-Reverts a previous commit.
+Reverts (পুনরায় উল্লেখ করা) a previous commit.
 
 ```bash
 revert: revert "feat: add user avatar upload"
