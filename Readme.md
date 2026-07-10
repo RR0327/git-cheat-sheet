@@ -370,6 +370,95 @@ git remote show origin
 
 ---
 
+## 9. Git Pull Error
+
+## Problem
+
+Running the following command:
+
+```bash
+git pull
+```
+
+produced the error:
+
+```bash
+fatal: couldn't find remote ref refs/heads/django_template
+```
+
+Although the repository's default branch was `main`, Git was still trying to pull from a deleted or non-existent remote branch named `django_template`.
+
+---
+
+## Cause
+
+The local branch was configured to track the remote branch:
+
+```bash
+origin/django_template
+```
+
+However, that branch had already been removed from the remote repository. Because the local Git configuration still referenced it, every `git pull` attempted to fetch a branch that no longer existed.
+
+---
+
+## Solution
+
+### 1. Remove stale remote references
+
+```bash
+git remote prune origin
+```
+
+This removes references to remote branches that have been deleted.
+
+---
+
+### 2. Fetch the latest branches
+
+```bash
+git fetch origin main
+```
+
+This updates the local repository with the latest information from the `main` branch.
+
+---
+
+### 3. Pull from the correct branch
+
+```bash
+git pull origin main
+```
+
+This successfully downloads and merges the latest changes from the remote `main` branch.
+
+---
+
+## Result
+
+The repository was updated successfully using a fast-forward merge, and all latest changes from the remote `main` branch were downloaded.
+
+---
+
+## Recommendation
+
+If `git pull` continues to look for the deleted branch, update the upstream branch:
+
+```bash
+git branch --unset-upstream
+git branch --set-upstream-to=origin/main <local-branch-name>
+```
+
+Replace `<local-branch-name>` with your current local branch name (for example, `main` or `master`).
+
+You can check your current branch with:
+
+```bash
+git branch
+```
+
+---
+
 > ## Resources
 
 - [Official Git Documentation](https://git-scm.com/docs)
