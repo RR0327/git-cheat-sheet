@@ -457,6 +457,151 @@ You can check your current branch with:
 git branch
 ```
 
+## 10. Creating and Pushing a New Git Branch
+
+## Problem
+
+You want to create a new branch from the `main` branch, work on a new feature independently, and push the branch to GitHub without affecting the `main` branch.
+
+---
+
+## Solution
+
+### 1. Verify you are on the `main` branch
+
+```bash
+git branch
+```
+
+Expected output:
+
+```text
+* main
+```
+
+If you are not on `main`, switch to it:
+
+```bash
+git switch main
+```
+
+---
+
+### 2. Create and switch to a new branch
+
+Replace `api` with your preferred branch name.
+
+```bash
+git switch -c api
+```
+
+Verify the current branch:
+
+```bash
+git branch
+```
+
+Expected output:
+
+```bash
+* api
+  main
+```
+
+---
+
+### 3. Make your changes
+
+Modify, add, or delete files as needed.
+
+Check the current status:
+
+```bash
+git status
+```
+
+---
+
+### 4. Stage and commit your changes
+
+```bash
+git add .
+git commit -m "feat(api): add REST API implementation"
+```
+
+---
+
+### 5. Push the branch to GitHub
+
+Since the branch does not yet exist on the remote repository:
+
+```bash
+git push -u origin api
+```
+
+The `-u` option sets the upstream branch, allowing future pushes with:
+
+```bash
+git push
+```
+
+---
+
+### 6. Verify the branch on the remote
+
+```bash
+git branch -a
+```
+
+Expected output:
+
+```bash
+* api
+  main
+  remotes/origin/api
+  remotes/origin/main
+```
+
+---
+
+## Switching Between Branches
+
+Switch to the `main` branch:
+
+```bash
+git switch main
+```
+
+Switch back to the `api` branch:
+
+```bash
+git switch api
+```
+
+---
+
+## Workflow Diagram
+
+```bash
+main
+  │
+  │
+  ├───────────────●───────────────●
+                  \
+                   \
+api                 ●──────────────●
+```
+
+- `main` remains stable.
+- `api` is used for feature development.
+- Changes can later be merged into `main` using a pull request or `git merge`.
+
+---
+
+## Result
+
+A new feature branch is created, development is isolated from the `main` branch, and the branch is successfully pushed to GitHub with upstream tracking configured. This workflow is the standard practice for collaborative Git development.
+
 ---
 
 > ## Resources
