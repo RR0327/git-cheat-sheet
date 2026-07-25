@@ -604,6 +604,228 @@ A new feature branch is created, development is isolated from the `main` branch,
 
 ---
 
+## 11. Git Push Failed with `remote: fatal error in commit_refs`
+
+## Problem
+
+While pushing commits to GitHub, the following error appears:
+
+```bash
+remote: fatal error in commit_refs
+To https://github.com/your-username/your-repository.git
+ ! [remote rejected] main -> main (failure)
+error: failed to push some refs
+```
+
+This error means your local Git commands completed successfully, but the remote repository rejected the push. The issue is typically related to the remote repository or requires further investigation to determine the exact cause.
+
+---
+
+# Solution
+
+Follow the steps below to diagnose and resolve the issue.
+
+## Step 1: Check the Repository Status
+
+Verify the current status of your local repository.
+
+```bash
+git status
+```
+
+Then inspect the most recent commits.
+
+```bash
+git log --oneline --graph --decorate -5
+```
+
+These commands help confirm that your working tree is clean and that the expected commits exist locally.
+
+---
+
+## Step 2: Verify the Remote Repository
+
+Check that your repository is connected to the correct remote.
+
+```bash
+git remote -v
+```
+
+Ensure that both the fetch and push URLs point to the intended GitHub repository.
+
+---
+
+## Step 3: Synchronize with the Remote Repository
+
+Fetch the latest changes from GitHub.
+
+```bash
+git fetch origin
+```
+
+Compare your local branch with the remote branch.
+
+View commits that exist locally but have not been pushed:
+
+```bash
+git log --oneline origin/main..HEAD
+```
+
+View commits that exist on the remote but not locally:
+
+```bash
+git log --oneline HEAD..origin/main
+```
+
+This helps determine whether your local and remote branches have diverged.
+
+---
+
+## Step 4: Try Pushing Again
+
+Sometimes the error is caused by a temporary issue on GitHub.
+
+Retry the push:
+
+```bash
+git push
+```
+
+If the push succeeds, no further action is required.
+
+If the error persists, continue to the next step.
+
+---
+
+## Step 5: Enable Verbose Output
+
+Collect more detailed information about the push operation.
+
+```bash
+git push --verbose
+```
+
+- The command `git push --verbose` (or its shorthand `git push -v`) forces Git to run the upload process verbosely, outputting extra details about the connection and transmission.
+- According to the official Git documentation, its main effect is showing the status of up-to-date references, which Git normally hides to keep terminal logs clean.
+
+> Key Features of Verbose Mode
+
+- Lists all branches: It prints confirmation lines for every branch evaluated, even those already up to date on the remote server.
+- Server details: It displays the specific remote repository URL and communication steps used during data transfer.
+- Troubleshooting aid: It helps diagnose frozen or stuck transfers by displaying explicit progress milestones.
+
+Or enable Git tracing.
+
+### Linux/macOS
+
+```bash
+GIT_TRACE=1 git push
+```
+
+### Windows PowerShell
+
+```powershell
+$env:GIT_TRACE=1
+git push
+```
+
+The additional output can help identify the exact reason for the failure.
+
+---
+
+# Possible Causes
+
+## 1. Temporary GitHub Server Issue (Most Common)
+
+GitHub may occasionally experience temporary internal errors that reject pushes.
+
+In this case:
+
+- Wait a few minutes.
+- Retry the push.
+- Check GitHub's service status if the problem continues.
+
+---
+
+## 2. Branch Protection Rules
+
+If the target branch is protected, GitHub usually returns an error similar to:
+
+```text
+protected branch hook declined
+```
+
+If you do not see this message, branch protection is unlikely to be the cause.
+
+---
+
+## 3. File or Repository Restrictions
+
+Large files, Git LFS configuration, or certain repository policies may prevent a successful push.
+
+Although renaming files generally does not cause this issue, repository rules or storage limitations could contribute to the failure.
+
+---
+
+# Commands to Collect Diagnostic Information
+
+Run the following commands and review their outputs.
+
+```bash
+git status
+```
+
+```bash
+git log --oneline --graph --decorate -5
+```
+
+```bash
+git remote -v
+```
+
+```bash
+git fetch origin
+```
+
+```bash
+git push --verbose
+```
+
+These commands provide enough information to determine whether the issue originates from the local repository, the remote repository, or GitHub itself.
+
+---
+
+# Important Notes
+
+Do **not** use the following commands unless you fully understand their effects.
+
+```bash
+git push --force
+```
+
+```bash
+git reset --hard
+```
+
+Both commands can overwrite history or permanently discard local changes.
+
+---
+
+# Summary
+
+If you encounter the `remote: fatal error in commit_refs` error:
+
+1. Check the repository status.
+2. Verify the remote configuration.
+3. Fetch and compare the local and remote branches.
+4. Retry the push.
+5. Collect verbose output if the problem persists.
+6. Review possible causes such as temporary GitHub issues, branch protection, or repository restrictions.
+
+Following these steps will help you identify the root cause before applying any potentially destructive Git commands.
+
+---
+
 > ## Resources
 
 - [Official Git Documentation](https://git-scm.com/docs)
