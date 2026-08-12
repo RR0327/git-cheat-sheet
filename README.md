@@ -1,5 +1,19 @@
 # Git Cheat Sheet
 
+<p align="center">
+  <img src="Git_Cheat_Sheet.png" alt="Git Cheat Sheet"width="700">
+</p>
+
+<p align="center">
+
+![Git](https://img.shields.io/badge/Git-Cheat%20Sheet-orange?logo=git)
+![GitHub](https://img.shields.io/badge/GitHub-Reference-black?logo=github)
+![Beginner Friendly](https://img.shields.io/badge/Beginner-Friendly-brightgreen)
+![Open Source](https://img.shields.io/badge/Open%20Source-Yes-blue)
+![Stars](https://img.shields.io/github/stars/RR0327/git-cheat-sheet?style=social)
+
+</p>
+
 A practical Git and GitHub reference for developers — from first commit to advanced troubleshooting.
 
 Whether you're learning Git for the first time or trying to fix a broken branch, this repository brings commonly used commands, workflows, troubleshooting steps, and advanced Git techniques into one place.
@@ -23,21 +37,6 @@ Whether you're learning Git for the first time or trying to fix a broken branch,
 - Software engineering teams
 - Developers who need a quick Git reference
 
-## Quick Reference
-
-| Task | Command |
-|---|---|
-| Check repository status | `git status` |
-| Clone a repository | `git clone <repository-url>` |
-| Stage all changes | `git add .` |
-| Commit changes | `git commit -m "message"` |
-| Pull latest changes | `git pull origin main` |
-| Push changes | `git push origin main` |
-| Create a branch | `git switch -c branch-name` |
-| Switch branches | `git switch branch-name` |
-| View commit history | `git log --oneline` |
-| Temporarily save changes | `git stash` |
-
 ## What's Included?
 
 1. Beginner Git commands
@@ -55,13 +54,63 @@ Whether you're learning Git for the first time or trying to fix a broken branch,
 
 ## Downloadable Resources
 
-This repository also includes:
+Want an offline reference?
 
-- `git-cheat-sheet-education.pdf` — printable Git cheat sheet
-- `Git Cheat Sheet.png` — visual quick reference
-- `conventional-commits-guide.md` — conventional commit guide
+### Git Cheat Sheet PDF
+[**Download the Git Cheat Sheet PDF**](./git-cheat-sheet-education.pdf)
 
-If this reference helps you, consider starring the repository so you can quickly find it again.
+A printable reference containing useful Git commands for quick offline access.
+
+### Visual Cheat Sheet Image
+[**View the Git Cheat Sheet Image**](./Git%20Cheat%20Sheet.png)
+
+Useful for keeping Git commands nearby while working.
+
+### Conventional Commits Guide
+[**Read the Conventional Commits Guide**](./conventional-commits-guide.md)
+
+Learn how to write structured commit messages such as:
+
+```bash
+feat: add authentication
+fix: resolve login validation issue
+docs: update installation guide
+refactor: simplify API handler
+```
+
+---
+
+## Table of Contents
+
+- [Quick Reference](#quick-reference)
+- [Prerequisites & Setup](#prerequisites--setup)
+- [Beginner Commands](#1-beginner)
+- [Intermediate & Advanced Commands](#2-intermediateadvanced)
+- [Expert Commands](#3-expert)
+- [Most Used Commands](#4-most-used-git-commands-quick-reference)
+- [Common Git Issues & Solutions](#5-common-git-issues--solutions)
+- [Git Workflow](#6-workflow-for-cloning-working-and-syncing)
+- [Adding a Single File](#7-adding-a-single-file-to-an-existing-clone)
+- [No Upstream Branch Fix](#8-git-push-issue-no-upstream-branch)
+- [Git Pull Errors](#9-git-pull-error)
+- [Creating & Pushing Branches](#10-creating-and-pushing-a-new-git-branch)
+- [Conventional Commits](conventional-commits-guide.md)
+- [Download Resources](#-downloadable-resources)
+
+## Quick Reference
+
+| Task | Command |
+|---|---|
+| Check repository status | `git status` |
+| Clone a repository | `git clone <repository-url>` |
+| Stage all changes | `git add .` |
+| Commit changes | `git commit -m "message"` |
+| Pull latest changes | `git pull origin main` |
+| Push changes | `git push origin main` |
+| Create a branch | `git switch -c branch-name` |
+| Switch branches | `git switch branch-name` |
+| View commit history | `git log --oneline` |
+| Temporarily save changes | `git stash` |
 
 ---
 
@@ -891,6 +940,22 @@ Following these steps will help you identify the root cause before applying any 
 
 ---
 
+## Contributing
+
+Contributions are welcome.
+
+If you know a useful Git command, workflow, troubleshooting technique, or improvement:
+
+1. Fork the repository
+2. Create a new branch
+3. Make your improvement
+4. Commit your changes
+5. Open a Pull Request
+
+Please keep examples clear, practical, and beginner-friendly.
+
+---
+
 > ## Responsible Usage & Credits
 
 ## Built by **Md Rakibul Hassan**
@@ -904,3 +969,11 @@ All content, credits, and intellectual property belong to their respective owner
 ## Use Git and GitHub ethically.
 
 _Happy Git-ing!_ _Happy coding!_
+
+---
+
+## Support the Project
+
+If this Git Cheat Sheet helped you solve a Git problem or learn something new, consider starring the repository.
+
+A star also makes it easier to find the cheat sheet again later.
